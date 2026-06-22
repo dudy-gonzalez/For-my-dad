@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Parker: El Desafío de la Ciénaga 🧅</title>
+    <style>
+        /* ==========================================================================
+           DISEÑO SHREK ULTRA MODERNO - CIÉNAGA HOLOGRÁFICA NEÓN
+           ========================================================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #0d120a;
+            color: #f1f5f9;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 24px;
+            overflow-x: hidden;
+            /* Fondo con nebulosa difuminada inspirada en la ciénaga de Shrek */
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(132, 204, 22, 0.2) 0px, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(234, 179, 8, 0.15) 0px, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(20, 30, 15, 1) 0px, #0a0e07 100%);
+        }
+
+        /* Contenedor Estilo Cristal de Alta Tecnología (Glassmorphism Ciénaga) */
+        .contenedor-holograma {
+            background: rgba(18, 28, 14, 0.75);
+            max-width: 680px;
+            width: 100%;
+            border-radius: 28px;
+            padding: 45px;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(132, 204, 22, 0.15);
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.6),
+                0 0 40px rgba(132, 204, 22, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            text-align: center;
+            position: relative;
+        }
+
+        /* Líneas decorativas en las esquinas estilo "Ogro Tech" */
+        .contenedor-holograma::before, .contenedor-holograma::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-color: #84cc16;
+            border-style: solid;
+            pointer-events: none;
+        }
+        .contenedor-holograma::before { top: 20px; left: 20px; border-width: 2px 0 0 2px; }
+        .contenedor-holograma::after { bottom: 20px; right: 20px; border-width: 0 2px 2px 0; }
+
+        /* Pantallas */
+        .pantalla {
+            display: none;
+        }
+        .activa {
+            display: block;
+            animation: entradaPanel 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes entradaPanel {
+            from { opacity: 0; transform: scale(0.93) translateY(15px); filter: blur(4px); }
+            to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+        }
+
+        /* Tipografías e Iluminación Estilo Shrek */
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #a3e635 0%, #65a30d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 14px;
+            filter: drop-shadow(0 2px 10px rgba(132, 204, 22, 0.4));
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #fef08a;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        /* Barra de Estatus Superior */
+        .interfaz-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 12px 24px;
+            border-radius: 40px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(132, 204, 22, 0.25);
+        }
+
+        .contador-vidas {
+            font-size: 1.6rem;
+            letter-spacing: 6px;
+            filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.7));
+        }
+
+        .indicador-progreso {
+            font-size: 0.95rem;
+            color: #a3e635;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Caja de Pregunta Estilo Monitor de la Ciénaga */
+        .monitor-pregunta {
+            background: rgba(5, 8, 4, 0.85);
+            padding: 28px;
+            border-radius: 20px;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 28px;
+            text-align: left;
+            border-right: 4px solid #84cc16;
+            border-bottom: 1px solid rgba(132, 204, 22, 0.2);
+            box-shadow: inset 0 4px 15px rgba(0,0,0,0.7);
+        }
+
+        /* Grid de Botones de Opciones */
+        .opciones-contenedor {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            margin-bottom: 15px;
+        }
+
+        .opcion-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(132, 204, 22, 0.15);
+            color: #cbd5e1;
+            padding: 18px 24px;
+            font-size: 1.1rem;
+            border-radius: 16px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .opcion-card:hover {
+            background: linear-gradient(90deg, rgba(101, 163, 13, 0.3), rgba(234, 179, 8, 0.1));
+            border-color: #a3e635;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(132, 204, 22, 0.2);
+        }
+
+        .opcion-card .letra-tag {
+            background: rgba(132, 204, 22, 0.15);
+            color: #bef264;
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            margin-right: 18px;
+            font-weight: 700;
+            border: 1px solid rgba(132, 204, 22, 0.3);
+            transition: all 0.2s;
+        }
+
+        .opcion-card:hover .letra-tag {
+            background: #84cc16;
+            color: #0d120a;
+            border-color: #a3e635;
+            box-shadow: 0 0 10px rgba(132, 204, 22, 0.6);
+        }
+
+        /* Botón de Comando Estilo Pantano Poderoso */
+        .btn-comando {
+            background: linear-gradient(135deg, #65a30d 0%, #eab308 100%);
+            padding: 16px 45px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: white;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            box-shadow: 0 8px 25px rgba(101, 163, 13, 0.4);
+        }
+
+        .btn-comando:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(132, 204, 22, 0.6);
+            letter-spacing: 2px;
+        }
+
+        /* Pantalla de Fallo de Autenticación */
+        .critico-alerta {
+            color: #ef4444;
+            font-size: 1.8rem;
+            font-weight: 800;
+            line-height: 1.6;
+            text-shadow: 0 0 25px rgba(239, 68, 68, 0.5);
+            margin-bottom: 40px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==========================================================================
+           SORPRESA DESBLOQUEADA (ÁLBUM, MENSAJE)
+           ========================================================================== */
+        .carta-glowing {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #e2e8f0;
+            text-align: justify;
+            margin: 35px 0;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(132, 204, 22, 0.1);
+            box-shadow: inset 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .firma-pro {
+            text-align: center;
+            font-weight: 800;
+            color: #a3e635;
+            font-size: 1.45rem;
+            margin-top: 30px;
+            text-shadow: 0 0 15px rgba(132, 204, 22, 0.4);
+            letter-spacing: 1px;
+        }
+
+        /* Álbum Premium Grid */
+        .galeria-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 20px;
+            margin: 35px 0;
+        }
+
+        .item-foto {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 2px solid rgba(132, 204, 22, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .item-foto:hover {
+            transform: scale(1.07) translateY(-6px);
+            border-color: #fef08a;
+            box-shadow: 0 15px 30px rgba(234, 179, 8, 0.4);
+        }
+
+        .linea-neon {
+            border: 0; height: 1px;
+            background: linear-gradient(to right, transparent, #65a30d, #eab308, transparent);
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="audio-juego" src="Top of the world.mp3" preload="auto" loop></audio>
+
+    <div class="contenedor-holograma">
+        
+        <div id="pantalla-inicio" class="pantalla activa">
+            <h1>FELIZ DIA RICHARD PARKER 🧅</h1>
+            <p style="color: #a3e635; margin-bottom: 40px; font-size: 1.15rem; line-height: 1.6;">
+                El día de hoy queremos que te diviertas, ya que es <strong>Día del Padre</strong>. Responde las siguientes preguntas para saber cuánto conoces a tus hijas y desbloquear un mensaje especial. ¡Los ogros tienen capas, y este día tiene sorpresas!
+            </p>
+            <button class="btn-comando" onclick="iniciarJuego()">🔓 Desbloquear Preguntas</button>
+        </div>
+
+        <div id="pantalla-juego" class="pantalla">
+            <div class="interfaz-top">
+                <div class="contador-vidas" id="vidas-box">❤️ ❤️ ❤️</div>
+                <div class="indicador-progreso" id="progreso-box">Pregunta 01 / 10</div>
+            </div>
+
+            <div class="monitor-pregunta" id="texto-pregunta">
+                Cargando registros...
+            </div>
+
+            <div class="opciones-contenedor" id="contenedor-opciones">
+            </div>
+        </div>
+
+        <div id="pantalla-derrota" class="pantalla">
+            <div class="critico-alerta">
+                🚨 ACCESO DENEGADO<br>
+                <span style="font-size: 1.3rem; font-weight: 500; color: #cbd5e1;">¡Ánimo Richard Parker! ¿A poco no nos conoces? ¿Te nos estás oxidando?</span>
+            </div>
+            <button class="btn-comando" onclick="reiniciarJuego()">🔄 Reintentar Preguntas</button>
+        </div>
+
+        <div id="pantalla-premio" class="pantalla">
+            <h1>✨ ¡LO LOGRASTE! ✨</h1>
+            <p style="color: #fef08a; font-style: italic; font-size: 1.15rem; letter-spacing: 0.5px;">Te viste formidable: ¡Eres el mejor papá de Muy Muy Lejano y del universo!</p>
+            
+            <hr class="linea-neon">
+
+            <main class="carta-glowing">
+                <p style="margin-bottom: 18px; font-weight: bold; color: #a3e635; font-size: 1.25rem; text-align: center;">¡Feliz Día del Padre, Richard Parker!</p>
+                <p style="margin-bottom: 18px;">Hoy queremos darte las gracias con todo el corazón por cada risa compartida, por aguantar pacientemente todas nuestras travesuras, locuras y ocurrencias que viste en las preguntas. Gracias por ser nuestro pilar, nuestro protector y el mejor maestro de vida.</p>
+                <p>Tu amor infinito y tu apoyo incondicional nos inspiran cada día a dar lo mejor de nosotras. No hay palabras para decirte cuánto te adoramos. ¡Disfruta tu sorpresa!</p>
+                <p class="firma-pro">Con amor eterno: Ana y Dulce. ❤️</p>
+            </main>
+
+            <hr class="linea-neon">
+
+            <h2>📸 Galería Digital de Recuerdos</h2>
+            <div class="galeria-premium">
+                <img src="foto1.jpeg" class="item-foto" alt="Recuerdo 1" onerror="this.src='https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=300';">
+                <img src="foto2.jpeg" class="item-foto" alt="Recuerdo 2" onerror="this.src='https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=300';">
+                <img src="foto3.jpeg" class="item-foto" alt="Recuerdo 3" onerror="this.src='https://images.unsplash.com/photo-1484981138541-3d074aa97716?q=80&w=300';">
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // BANCO DE PREGUNTAS
+        const preguntas = [
+            {
+                q: "¿De qué color era el vestido de Ana de su cumpleaños número 3?",
+                opciones: { A: "Azul", B: "Morado", C: "Verde" },
+                correcta: "C"
+            },
+            {
+                q: "¿De qué película era la canción de princesas que bailaba Dulce con su mamá?",
+                opciones: { A: "Encantada", B: "La bella durmiente", C: "Shrek" },
+                correcta: "A"
+            },
+            {
+                q: "¿Qué parte del cuerpo se lastimó Ana en una caída cuando se golpeó con un buró?",
+                opciones: { A: "Nariz", B: "Ojo", C: "Frente" },
+                correcta: "B"
+            },
+            {
+                q: "¿Cuál de tus hijas practicó Jazz?",
+                opciones: { A: "Ana", B: "Dulce", C: "Ninguna" },
+                correcta: "B"
+            },
+            {
+                q: "¿Cuál de tus hijas sacaba 7 en primaria?",
+                opciones: { A: "Ana", B: "Dulce", C: "Ninguna de las dos" },
+                correcta: "A"
+            },
+            {
+                q: "Logro desbloqueado de Ana: ¿Cuál se hizo del baño afuera de la casa de Tere?",
+                opciones: { A: "Ana", B: "Dulce", C: "Ninguna de las dos" },
+                correcta: "A"
+            },
+            {
+                q: "¿Cuánto tiempo soportaste a tus hijas en tu casa?",
+                opciones: { A: "5 Horas", B: "Un día", C: "Dos días" },
+                correcta: "B"
+            },
+            {
+                q: "¿Cuál de tus hijas es más hiperactiva?",
+                opciones: { A: "Ana", B: "Dulce", C: "Ninguna de las dos" },
+                correcta: "A"
+            },
+            {
+                q: "¿Cuántos novios ha tenido Ana?",
+                opciones: { A: "8", B: "1", C: "4" },
+                correcta: "C"
+            },
+            {
+                q: "¿En qué cosa vomitó Dulce en la primaria?",
+                opciones: { A: "En el bote de basura del salón", B: "La bolsa de mi mamá", C: "En su lonchera" },
+                correcta: "B"
+            }
+        ];
+
+        let indicePreguntaActual = 0;
+        let vidas = 3;
+        
+        const audioJuego = document.getElementById('audio-juego');
+
+        function cambiarPantalla(idPantalla) {
+            document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('activa'));
+            document.getElementById(idPantalla).classList.add('activa');
+        }
+
+        function iniciarJuego() {
+            indicePreguntaActual = 0;
+            vidas = 3;
+            actualizarVidasVisuales();
+            cambiarPantalla('pantalla-juego');
+            cargarPregunta();
+            audioJuego.play().catch(e => console.log("Audio permitido tras interacción del usuario."));
+        }
+
+        function cargarPregunta() {
+            const datos = preguntas[indicePreguntaActual];
+            document.getElementById('progreso-box').textContent = `Módulo ${indicePreguntaActual + 1} / ${preguntas.length}`;
+            document.getElementById('texto-pregunta').innerHTML = `<span style="color: #a3e635; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px; display:block; margin-bottom: 6px;">ANÉCDOTA DE LA CIÉNAGA:</span>${datos.q}`;
+            
+            const contenedorOpciones = document.getElementById('contenedor-opciones');
+            contenedorOpciones.innerHTML = "";
+
+            Object.keys(datos.opciones).forEach(letra => {
+                const boton = document.createElement('button');
+                boton.className = 'opcion-card';
+                boton.innerHTML = `<span class="letra-tag">${letra}</span> ${datos.opciones[letra]}`;
+                boton.onclick = () => evaluarRespuesta(letra);
+                contenedorOpciones.appendChild(boton);
+            });
+        }
+
+        function evaluarRespuesta(opcionSeleccionada) {
+            const respuestaCorrecta = preguntas[indicePreguntaActual].correcta;
+
+            if (opcionSeleccionada === respuestaCorrecta) {
+                indicePreguntaActual++;
+                if (indicePreguntaActual < preguntas.length) {
+                    cargarPregunta();
+                } else {
+                    cambiarPantalla('pantalla-premio');
+                }
+            } else {
+                vidas--;
+                actualizarVidasVisuales();
+
+                if (vidas === 0) {
+                    audioJuego.pause();
+                    cambiarPantalla('pantalla-derrota');
+                } else {
+                    alert("❌ ¡Ánimo Richard Parker! ¿A poco no nos conoces? Inténtalo de nuevo.");
+                }
+            }
+        }
+
+        function actualizarVidasVisuales() {
+            const vidasBox = document.getElementById('vidas-box');
+            if (vidas === 3) vidasBox.innerHTML = "❤️ ❤️ ❤️";
+            if (vidas === 2) vidasBox.innerHTML = "❤️ ❤️ 🖤";
+            if (vidas === 1) vidasBox.innerHTML = "❤️ 🖤 🖤";
+            if (vidas === 0) vidasBox.innerHTML = "🖤 🖤 🖤";
+        }
+
+        function reiniciarJuego() {
+            cambiarPantalla('pantalla-inicio');
+        }
+    </script>
+</body>
+</html>
